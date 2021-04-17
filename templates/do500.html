@@ -9,7 +9,7 @@
 				<nav class="catalog-nav">
 					<ul class="catalog-nav__wrapper">
 						<li class="catalog-nav__item">
-							<button class="catalog-nav__btn is-active" type="button">все</button>
+							<a href="/vse"><button class="catalog-nav__btn is-active" type="button">все</button></a>
 						</li>
 						<li class="catalog-nav__item">
 							<a href="/do500"><button class="catalog-nav__btn" type="button" onclick="">до 500р</button></a>
@@ -36,7 +36,7 @@
                                         <span class="proudct__price-value">{{ el['price'] }}</span>
                                         <span class="product__currency">&#8381;</span>
                                     </div>
-                                    <button type="button" class="btn product__btn">Заказать</button>
+									<a href="/buy/{{ el.id }}"><button type="button" class="btn product__btn">Заказать</button></a>
                                 </div>
                         </div>
                     {%endif %}

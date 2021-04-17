@@ -7,10 +7,10 @@
 			<video src="{{ url_for('static', filename='video/back.mp4') }}" autoplay loop muted></video>
 		</div>
 		<div class="container">
-			<div class="section-top__container">
+			<div class="section-top__container" style="scroll-behavior: smooth;">
 				<a href="#" class="section-top__info">with care about tommorow</a>
 				<h1 class="section-top__title">Подарок на любой <br> вкус и цвет</h1>
-				<div class="section-top__button">
+				<div class="section-top__button" style="scroll-behavior: smooth;">
 					<a href="#cataloger"><button class="btn" type="button">Выбрать</button></a>
 				</div>
 			</div>
@@ -26,7 +26,7 @@
 				<nav class="catalog-nav">
 					<ul class="catalog-nav__wrapper">
 						<li class="catalog-nav__item">
-							<button class="catalog-nav__btn is-active" type="button">все</button>
+							<a href="/vse"><button class="catalog-nav__btn is-active" type="button">все</button></a>
 						</li>
 						<li class="catalog-nav__item">
 							<a href="/do500"><button class="catalog-nav__btn" type="button" onclick="">до 500р</button></a>
@@ -52,7 +52,7 @@
 									<span class="proudct__price-value">{{ el['price'] }}</span>
 									<span class="product__currency">&#8381;</span>
 								</div>
-								<button type="button" class="btn product__btn">Заказать</button>
+								<a href="/buy/{{ el.id }}"><button type="button" class="btn product__btn">Заказать</button></a>
 							</div>
 					</div>
 				{% endfor %}
@@ -63,7 +63,7 @@
 
 
 	<!-- section about -->
-	<section class="section section-about" id="abouter">
+	<section class="section section-about" id="abouter" style="scroll-behavior: smooth;">
 		<img src="{{ url_for('static', filename='img/about.png') }}" alt="l" class="section-about__img">
 		<div class="conatiner section-about__container">
 			<div class="section-about__content">
@@ -76,8 +76,8 @@
 	<!-- section about -->
 
 	<!-- section contacts -->
-		<section class="section section-contatcs" id="contacter">
-			<div class="container section-contatcs__container">
+		<section class="section section-contatcs" id="contacter" style="scroll-behavior: smooth;">
+			<div class="container section-contatcs__container" style="scroll-behavior: smooth;">
 				<header class="section__header">
 					<h2 class="section__title section-contacts__title">Контакты</h2>
 				</header>

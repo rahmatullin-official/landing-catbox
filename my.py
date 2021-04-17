@@ -28,10 +28,30 @@ def index():
     return render_template('index.html', data=items)
 
 
+@app.route('/buy/<int:id>')
+def buy_item(id):
+    item = Item.query.get(id)
+    api = Api(merchant_id=1396424,
+              secret_key='test')
+    checkout = Checkout(api=api)
+    data = {
+        "currency": "RUB",
+        "amount": str(item.price) + "00"
+    }
+    url = checkout.url(data).get('checkout_url')
+    return redirect(url)
+
+
 @app.route('/do1500')
 def do1500():
     items = Item.query.order_by(Item.price).all()
     return render_template('do1500.html', data=items)
+
+
+@app.route('/vse')
+def vse():
+    items = Item.query.order_by(Item.price).all()
+    return render_template('vse.html', data=items)
 
 
 @app.route('/do1000')

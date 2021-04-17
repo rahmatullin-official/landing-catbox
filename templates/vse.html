@@ -25,7 +25,6 @@
 			</header>
 				<div class="catalog" >
 					{% for el in data %}
-                      {% if el['price'] <= 1000 %}
                         <div class="catalog__item">
                                 <div class="product__content">
                                     <h3 class="product__title">{{ el['title'] }}</h3>
@@ -36,10 +35,9 @@
                                         <span class="proudct__price-value">{{ el['price'] }}</span>
                                         <span class="product__currency">&#8381;</span>
                                     </div>
-									<a href="/buy/{{el.id}}"><button type="button" class="btn product__btn">Заказать</button></a>
+									<a href="/buy/{{ el.id }}"><button type="button" class="btn product__btn">Заказать</button></a>
                                 </div>
                         </div>
-                    {%endif %}
 				{% endfor %}
 				</div>
 			</div>
