@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/section-top.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/header-page.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/section-about.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/section-contacts.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/footer-page.css') }}">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/common/logo.png') }}" type="image/png">
+
+	{% block title %}{%endblock%}
+</head>
+<body>
+<!-- header -->
+	<header class="header-page">
+		<div class="container header-page__container">
+			<div class="header-page__start">
+				<div class="logo">
+					<a href="/"><img src="{{ url_for('static', filename='img/common/ico.png') }}" alt="logo" class="logo__img"></a>
+				</div>
+			</div>
+			<div class="header-page__end">
+				<nav class="header-page__nav">
+					<ul class="header-page__ul">
+						<li class="header-page__li">
+							<a href="#cataloger" class="header-page__link"><span class=header-page__text>боксы</span></a>
+						</li>
+						<li class="header-page__li">
+							<a href="#abouter" class="header-page__link"><span class=header-page__text>о нас</span></a>
+						</li>
+						<li class="header-page__li">
+							<a href="#contacter" class="header-page__link"><span class=header-page__text>контакты</span></a>
+						</li>
+					</ul>
+				</nav>
+				<div class="phone">
+					<a class="phone__item header-page__phone" href="tel:+79992283988">+7 (999) 228-39-88</a>
+				</div>
+				<div class="header-page__hamburger">
+					<button class="btn-menu" type="button">
+						<span class="btn-menu__box">
+							<span class="btn-menu__inner">
+
+							</span>
+					   </span>
+				    </button>
+				</div>
+			</div>
+		</div>
+	</header>
+{% block content %}{% endblock %}
+	<!-- footer page -->
+	<footer class="footer-page">
+		<div class="container">
+			<div class="footer-page__text">WCAT_PRESENTS 2021©</div>
+		</div>
+	</footer>
+	<!-- footer page -->
+</body>
+</html>

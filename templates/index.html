@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block title %}<title>Wcat_presents</title>{%endblock%}
+{% block content %}
+	<!-- section top -->
+	<section class="section-top">
+		<div class="section-top__video">
+			<video src="{{ url_for('static', filename='video/back.mp4') }}" autoplay loop muted></video>
+		</div>
+		<div class="container">
+			<div class="section-top__container">
+				<a href="#" class="section-top__info">with care about tommorow</a>
+				<h1 class="section-top__title">Подарок на любой <br> вкус и цвет</h1>
+				<div class="section-top__button">
+					<a href="#cataloger"><button class="btn" type="button">Выбрать</button></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- section-top -->
+
+	<!-- section-catalog -->
+	<section class="section section-catalog" id="cataloger">
+		<div class="container">
+			<header class="section__header">
+				<h2 class="section__title section__title--accent">Боксы</h2>
+				<nav class="catalog-nav">
+					<ul class="catalog-nav__wrapper">
+						<li class="catalog-nav__item">
+							<button class="catalog-nav__btn is-active" type="button">все</button>
+						</li>
+						<li class="catalog-nav__item">
+							<a href="/do500"><button class="catalog-nav__btn" type="button" onclick="">до 500р</button></a>
+						</li>
+						<li class="catalog-nav__item">
+							<a href="/do1000"><button class="catalog-nav__btn" type="button" onclick="">до 1000р</button></a>
+						</li>
+						<li class="catalog-nav__item">
+							<a href="/do1500"><button class="catalog-nav__btn" type="button">до 1500р</button></a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+				<div class="catalog" >
+					{% for el in data %}
+					<div class="catalog__item">
+							<div class="product__content">
+								<h3 class="product__title">{{ el['title'] }}</h3>
+								<p class="product__description">{{ el['description'] }}</p>
+							</div>
+							<div class="product__bottom">
+								<div class="product__price">
+									<span class="proudct__price-value">{{ el['price'] }}</span>
+									<span class="product__currency">&#8381;</span>
+								</div>
+								<button type="button" class="btn product__btn">Заказать</button>
+							</div>
+					</div>
+				{% endfor %}
+				</div>
+			</div>
+	</section>
+	<!-- section-catalog -->
+
+
+	<!-- section about -->
+	<section class="section section-about" id="abouter">
+		<img src="{{ url_for('static', filename='img/about.png') }}" alt="l" class="section-about__img">
+		<div class="conatiner section-about__container">
+			<div class="section-about__content">
+				<h2 class="section__title section-about__title">О нас</h2>
+				<p class="section-about__text">Делаем самые креативные, сногсшибательные четкие боксы!</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- section about -->
+
+	<!-- section contacts -->
+		<section class="section section-contatcs" id="contacter">
+			<div class="container section-contatcs__container">
+				<header class="section__header">
+					<h2 class="section__title section-contacts__title">Контакты</h2>
+				</header>
+				<div class="contacts">
+					<div class="contacts__start">
+						<div class="contacts__map"><img src="{{ url_for('static', filename='img/map2.png') }}" width="580" height="450" alt=""></div>
+					</div>
+					<div class="contacts__end">
+						<div class="contacts__item">
+							<h3 class="contacts__title">Адрес</h3>
+							<p class="contacts__text">г. Ижевск, ул Холмогорова, 19</p>
+						</div>
+                        <div class="contacts__item">
+							<h3 class="contacts__title">Телефоны</h3>
+							<p class="contacts__text"><a class="contacts__phone" href="tel:+79992283988">+7 (999) 228-39-88</a></p>
+						</div>
+						<div class="contacts__item">
+							<h3 class="contacts__title">Социальные сети</h3>
+							<ul class="socials">
+								<li class="socials__item">
+									<a href="#" target="_blank" class="socials__link"><img src="{{ url_for('static', filename='img/facebook.png') }}" width="35" height="35" alt="" class="socials__logo"></a>
+								</li>
+								<li class="socials__item">
+									<a href="#" target="_blank" class="socials__link"><img src="{{ url_for('static', filename='img/instagram.png') }}" alt="" width="35" height="35" class="socials__logo"></a>
+								</li>
+								<li class="socials__item">
+									<a href="#" target="_blank" class="socials__link"><img src="{{ url_for('static', filename='img/vk.png') }}" width="35" height="35" alt="" class="socials__logo"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- section contacts -->
+
+{% endblock %}
